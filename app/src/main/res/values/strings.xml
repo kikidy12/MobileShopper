@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MobileShopper</string>
+
+    <!--LoginActivity-->
+    <string name="id_txt">아이디</string>
+    <string name="id_hint">아이디를 입력하세요</string>
+    <string name="pw_txt">비밀번호</string>
+    <string name="pw_hint">비밀번호를 입력하세요</string>
+    <string name="login_btn">로그인</string>
+
+    <!--shopInfoActivity-->
+    <string name="point_info">포인트 정보</string>
+    <string name="buy_recoding">구매기록</string>
+    <string name="product_add">상품추가</string>
+</resources>
