@@ -21,7 +21,6 @@ public class ProcductListViewActivity extends BaseActivity {
     public static List<ProductData> productDataList = new ArrayList<>();
     ProductAdapter productAdapter;
     private android.widget.Button addItemTxt;
-    ProductData productData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +29,6 @@ public class ProcductListViewActivity extends BaseActivity {
         bindViews();
         setUpEvents();
         setValues();
-        if(productData != null){
-
-        }
         setProductList();
     }
 
@@ -58,7 +54,6 @@ public class ProcductListViewActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, BarcodeActivity.class);
-                setResult(RESULT_OK, intent);
                 startActivity(intent);
             }
         });
