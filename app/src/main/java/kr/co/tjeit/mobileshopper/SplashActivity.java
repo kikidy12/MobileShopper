@@ -30,18 +30,8 @@ public class SplashActivity extends BaseActivity {
                 }
                 Intent intent = new Intent(mContext, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
-        },5000);
-    }
-
-
-    public void setProductList() {
-        GeneralData.grobalDatas.clear();
-        GeneralData.grobalDatas.add(new ProductData("칸초", 10000, 1, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("죠리퐁", 2000, 1, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("가위", 5000, 2, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("돌", 1, 4, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("꽃", 100, 5, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("나무", 100000, 6, R.drawable.logo_shop));
+        },2000);
     }
 }
