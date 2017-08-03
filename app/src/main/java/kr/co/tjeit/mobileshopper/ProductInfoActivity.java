@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.Calendar;
 
 import kr.co.tjeit.mobileshopper.data.ProductData;
+import kr.co.tjeit.mobileshopper.util.GeneralData;
 
 public class ProductInfoActivity extends BaseActivity {
 
@@ -52,8 +53,7 @@ public class ProductInfoActivity extends BaseActivity {
                 String count = countEdt.getText().toString();
 
                 ProductData productData = new ProductData(productBtn.getText().toString(), Integer.parseInt(price), Integer.parseInt(count), R.drawable.logo_shop);
-                intent.putExtra("test", productData);
-                setResult(RESULT_OK, intent);
+                GeneralData.grobalDatas.add(productData);
 
                 finish();
             }

@@ -9,6 +9,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import kr.co.tjeit.mobileshopper.data.ProductData;
+import kr.co.tjeit.mobileshopper.util.GeneralData;
+
 
 public class SplashActivity extends BaseActivity {
 
@@ -29,5 +32,16 @@ public class SplashActivity extends BaseActivity {
                 startActivity(intent);
             }
         },5000);
+    }
+
+
+    public void setProductList() {
+        GeneralData.grobalDatas.clear();
+        GeneralData.grobalDatas.add(new ProductData("칸초", 10000, 1, R.drawable.logo_shop));
+//        productDataList.add(new ProductData("죠리퐁", 2000, 1, R.drawable.logo_shop));
+//        productDataList.add(new ProductData("가위", 5000, 2, R.drawable.logo_shop));
+//        productDataList.add(new ProductData("돌", 1, 4, R.drawable.logo_shop));
+//        productDataList.add(new ProductData("꽃", 100, 5, R.drawable.logo_shop));
+//        productDataList.add(new ProductData("나무", 100000, 6, R.drawable.logo_shop));
     }
 }

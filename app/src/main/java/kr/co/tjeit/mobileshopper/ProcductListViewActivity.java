@@ -12,13 +12,13 @@ import java.util.List;
 
 import kr.co.tjeit.mobileshopper.adapters.ProductAdapter;
 import kr.co.tjeit.mobileshopper.data.ProductData;
+import kr.co.tjeit.mobileshopper.util.GeneralData;
 
 public class ProcductListViewActivity extends BaseActivity {
 
 
 
     private android.widget.ListView productListVIew;
-    public static List<ProductData> productDataList = new ArrayList<>();
     ProductAdapter productAdapter;
     private android.widget.Button addItemTxt;
 
@@ -29,18 +29,8 @@ public class ProcductListViewActivity extends BaseActivity {
         bindViews();
         setUpEvents();
         setValues();
-        setProductList();
     }
 
-    public void setProductList() {
-        productDataList.clear();
-        productDataList.add(new ProductData("칸초", 10000, 1, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("죠리퐁", 2000, 1, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("가위", 5000, 2, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("돌", 1, 4, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("꽃", 100, 5, R.drawable.logo_shop));
-//        productDataList.add(new ProductData("나무", 100000, 6, R.drawable.logo_shop));
-    }
 
     @Override
     public void bindViews() {
@@ -60,22 +50,15 @@ public class ProcductListViewActivity extends BaseActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == 1000){
-
-            if(resultCode == RESULT_OK){
-                ProductData productData = (ProductData) getIntent().getSerializableExtra("test");
-                productDataList.add(productData);
-                productAdapter.notifyDataSetChanged();
-            }
-        }
+    protected void onResume() {
+        super.onResume();
+        productAdapter.notifyDataSetChanged();
     }
+
 
     @Override
     public void setValues() {
-        productAdapter = new ProductAdapter(mContext, productDataList);
+        productAdapter = new ProductAdapter(mContext, GeneralData.grobalDatas);
         productListVIew.setAdapter(productAdapter);
     }
 }
